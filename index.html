@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="img/ico.png" type="image/png" />
+    <title>FacuApp</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="min-h-screen bg-indigo-950">
+    <!-- BOTON PARA IR AL TOP DE LA PAGINA -->
+    <button
+      id="top-button"
+      class="fixed bottom-4 duration-200 opacity-0 right-4 bg-indigo-500 hover:bg-indigo-600 text-indigo-100 rounded-full w-12 h-12 flex items-center justify-center"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="lucide lucide-arrow-up"
+      >
+        <path d="m5 12 7-7 7 7" />
+        <path d="M12 19V5" />
+      </svg>
+    </button>
+
+    <nav
+      class="bg-indigo-500 text-indigo-100 h-24 sm:gap-8 gap-4 sm:flex-no-wrap font-semibold flex-wrap flex items-center justify-center list-none shadow"
+    >
+      <li class="hover:scale-110 duration-200 cursor-pointer">Empatizar</li>
+      <li class="hover:scale-110 duration-200 cursor-pointer">Definir</li>
+      <li class="hover:scale-110 duration-200 cursor-pointer">Idear</li>
+      <li class="hover:scale-110 duration-200 cursor-pointer">Prototipar</li>
+      <li class="hover:scale-110 duration-200 cursor-pointer">Testar</li>
+    </nav>
+
+    <main class="max-w-[800px] m-auto flex items-center flex-col gap-24 my-16">
+      <!-- INTRO -->
+      <section
+        class="flex sm:flex-row flex-col items-center gap-8 text-indigo-100"
+      >
+        <img class="w-[320px]" src="img/banner.png" alt="FacuApp logo" />
+        <div>
+          <h1 class="font-bold text-6xl mb-4 tracking-widest">FacuApp</h1>
+          <p class="font-light text-xl">
+            FacuApp es una aplicación que permite a los estudiantes de las
+            diferentes facultades de la Universidad de Itapua obtener y
+            compartir recursos academicos dentro de un entorno que promueve la
+            colaboración entre los estudiantes.
+          </p>
+        </div>
+      </section>
+
+      <!-- FASE EMPATIZAR -->
+      <section class="flex flex-col gap-4 text-indigo-100">
+        <h2
+          class="font-bold text-4xl pb-4 tracking-widest border-b border-indigo-100"
+        >
+          Empatizar
+        </h2>
+        <div>
+          <h3 class="font-semibold text-2xl">User Personas</h3>
+          <p class="font-light text-xl">
+            La problemática de la descentralización de la información en la
+            FIUNI surgió tras una discusión grupal dentro del desarrollo de una
+            lluvia de ideas, donde llegamos a una conclusión compartida: la
+            información relacionada con la vida académica, como las
+            correlatividades entre materias, la bibliografía, los horarios,
+            acceso a recursos (resúmenes, ejercicios resueltos, etc) de alumnos,
+            entre otros aspectos, es difícil de encontrar en un único lugar
+            accesible.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="font-semibold text-2xl">Metodologia</h3>
+          <p class="font-light text-xl">
+            La investigación tiene como objetivo identificar las dificultades
+            que enfrentan los estudiantes de la Facultad de Ingeniería de la UNI
+            para acceder a materiales educativos e información relevante, y cómo
+            estas barreras impactan su rendimiento académico. Para abordar este
+            problema, se realizaron
+            <a
+              title="Google Form Encuestas"
+              class="underline text-blue-500 font-semibold"
+              href="https://forms.gle/htsuYTzhqTD9sVoT9"
+              target="_blank"
+              >encuestas</a
+            >
+            y
+            <a
+              title="Google Docs Scripts de Entrevistas"
+              class="underline text-blue-500 font-semibold"
+              href="https://docs.google.com/document/d/1xQX1dTEMaxl5xpSzHxSHWfC9IYCu4pT11AuwnPPLqRs/edit"
+              target="_blank"
+              >entrevistas</a
+            >
+            a estudiantes de distintos semestres, egresados y recién ingresados.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="font-semibold text-2xl mb-2">Resultados</h3>
+          <div class="flex gap-2 flex-col">
+            <img
+              class="w-full rounded h-auto object-cover"
+              src="img/empatizar.png"
+              alt="Empatizar 1"
+            />
+            <p class="font-light text-xl">
+              Se llevó a cabo una encuesta a 61 estudiantes de la facultad para
+              explorar las dinámicas y desafíos en su desarrollo académico.
+              Mediantes los
+              <a
+                title="Resultados"
+                class="underline text-blue-500 font-semibold"
+                href="https://docs.google.com/spreadsheets/d/1SP8eCswPOU8cp2Mn0pShArGM_duQXnk-mUjNEORGX-o/edit?usp=sharing"
+                >resultados</a
+              >
+              se encontraron que la información relevante, como horarios y
+              correlatividades de las materias, es crucial para los estudiantes
+              a la hora de inscribirse. Sin embargo, la falta de recursos para
+              resolver dudas académicas y la limitada disponibilidad de
+              materiales adecuados para estudiar son áreas que requieren
+              atención. La colaboración entre compañeros juega un papel central,
+              tanto en la resolución de dudas como en el intercambio de recursos
+              de estudio, destacándose la importancia de mejorar el acceso a
+              guías de estudio y ejemplos de exámenes para una preparación más
+              eficaz.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- FASE DEFINIR -->
+      <section class="flex flex-col gap-4 text-indigo-100">
+        <h2
+          class="font-bold text-4xl pb-4 tracking-widest border-b border-indigo-100"
+        >
+          Definir
+        </h2>
+        <div>
+          <h3 class="font-semibold text-2xl">User Personas</h3>
+          <div>
+            <img
+              class="w-full rounded h-auto object-cover"
+              src="img/definir.png"
+            />
+            <p class="font-light text-xl">
+              Para la creación de los user personas, se utilizó la información
+              recopilada en la fase de empatizar. Esta investigación permitió
+              identificar los principales desafíos que enfrentan los estudiantes
+              en su experiencia académica, pudiendo desarrollar perfiles
+              detallados de los usuarios, que incluyen sus necesidades,
+              frustraciones y objetivos, con el fin de comprender mejor su
+              contexto y cómo se relacionan con los recursos educativos
+              disponibles.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
