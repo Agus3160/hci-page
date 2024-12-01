@@ -6,7 +6,10 @@
     <link rel="stylesheet" href="style.css" />
     <link rel="shortcut icon" href="img/ico.png" type="image/png" />
     <title>FacuApp</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <script
+      src="https://cdn.tailwindcss.com"
+      data-tailwind-ignore="true"
+    ></script>
   </head>
   <body class="min-h-screen bg-indigo-950">
     <!-- BOTON PARA IR AL TOP DE LA PAGINA -->
@@ -34,11 +37,10 @@
     <nav
       class="bg-indigo-500 text-indigo-100 h-24 sm:gap-8 gap-4 sm:flex-no-wrap font-semibold flex-wrap flex items-center justify-center list-none shadow"
     >
-      <li class="hover:scale-110 duration-200 cursor-pointer">Empatizar</li>
-      <li class="hover:scale-110 duration-200 cursor-pointer">Definir</li>
-      <li class="hover:scale-110 duration-200 cursor-pointer">Idear</li>
-      <li class="hover:scale-110 duration-200 cursor-pointer">Prototipar</li>
-      <li class="hover:scale-110 duration-200 cursor-pointer">Testar</li>
+      <li id="empatizar" class="hover:scale-110 duration-200 cursor-pointer">Empatizar</li>
+      <li id="definir" class="hover:scale-110 duration-200 cursor-pointer">Definir</li>
+      <li id="idear" class="hover:scale-110 duration-200 cursor-pointer">Idear</li>
+      <li id="prototipar" class="hover:scale-110 duration-200 cursor-pointer">Prototipar</li>
     </nav>
 
     <main class="max-w-[800px] m-auto flex items-center flex-col gap-24 my-16">
@@ -61,12 +63,13 @@
       <!-- FASE EMPATIZAR -->
       <section class="flex flex-col gap-4 text-indigo-100">
         <h2
+          id="title-empatizar"
           class="font-bold text-4xl pb-4 tracking-widest border-b border-indigo-100"
         >
           Empatizar
         </h2>
         <div>
-          <h3 class="font-semibold text-2xl">User Personas</h3>
+          <h3 class="font-semibold text-2xl">Problematica</h3>
           <p class="font-light text-xl">
             La problemática de la descentralización de la información en la
             FIUNI surgió tras una discusión grupal dentro del desarrollo de una
@@ -109,17 +112,25 @@
         <div>
           <h3 class="font-semibold text-2xl mb-2">Resultados</h3>
           <div class="flex gap-2 flex-col">
-            <img
-              class="w-full rounded h-auto object-cover"
-              src="img/empatizar/resultados.png"
-              alt="Empatizar 1"
-            />
+            <div class="flex flex-col gap-1">
+              <img
+                class="w-full rounded h-auto object-cover"
+                src="img/empatizar/resultados.png"
+                alt="Empatizar 1"
+              />
+              <p class="font-light text-slate-400">
+                Resultados a la pregunta "¿A quién acudes en un principio cuando
+                tienes dudas sobre el contenido de tu carrera?".
+              </p>
+            </div>
+
             <p class="font-light text-xl">
               Se llevó a cabo una encuesta a 61 estudiantes de la facultad para
               explorar las dinámicas y desafíos en su desarrollo académico.
               Mediantes los
               <a
                 title="Resultados"
+                target="_blank"
                 class="underline text-blue-500 font-semibold"
                 href="https://docs.google.com/spreadsheets/d/1SP8eCswPOU8cp2Mn0pShArGM_duQXnk-mUjNEORGX-o/edit?usp=sharing"
                 >resultados</a
@@ -142,6 +153,7 @@
       <!-- FASE DEFINIR -->
       <section class="flex flex-col gap-4 text-indigo-100">
         <h2
+          id="title-definir"
           class="font-bold text-4xl pb-4 tracking-widest border-b border-indigo-100"
         >
           Definir
@@ -150,10 +162,16 @@
           <div>
             <h3 class="font-semibold text-2xl">User Personas</h3>
             <div>
-              <img
-                class="w-full rounded h-auto object-cover"
-                src="img/definir/user-persona.png"
-              />
+              <div class="flex flex-col gap-1 my-2">
+                <img
+                  class="w-full rounded h-auto object-cover"
+                  src="img/definir/user-persona.png"
+                />
+                <p class="font-light text-slate-400">
+                  Uno de los user persona realizados durante esta fase.
+                </p>
+              </div>
+
               <p class="font-light text-xl">
                 Para la creación de los user personas, se utilizó la información
                 recopilada en la fase de empatizar. Esta investigación permitió
@@ -170,10 +188,16 @@
           <div>
             <h3 class="font-semibold text-2xl">POVs (Points of View)</h3>
             <div>
-              <img
-                class="w-full rounded h-auto object-cover"
-                src="img/definir/povs.png"
-              />
+              <div class="flex flex-col gap-1 my-2">
+                <img
+                  class="w-full rounded h-auto object-cover"
+                  src="img/definir/povs.png"
+                />
+                <p class="font-light text-slate-400">
+                  Uno de los POVs realizados durante esta fase.
+                </p>
+              </div>
+
               <p class="font-light text-xl">
                 Los POVs fueron esenciales para entender las necesidades, deseos
                 y desafíos específicos de los usuarios. A través de la
@@ -198,6 +222,7 @@
             siguiente enlace:
             <a
               title="Definción"
+              target="_blank"
               class="underline text-blue-500 font-semibold"
               href="https://docs.google.com/document/d/1uGdcUVVDZjZJBmYpvgfm-viikBXzQXHMAfjz8r_8u-E/edit?usp=sharing"
               >Definición</a
@@ -209,30 +234,229 @@
       <!-- FASE IDEAR -->
       <section class="flex flex-col gap-4 text-indigo-100">
         <h2
+          id="title-idear"
           class="font-bold text-4xl pb-4 tracking-widest border-b border-indigo-100"
         >
           Idear
         </h2>
         <div class="flex flex-col gap-6">
           <div>
-            <h3 class="font-semibold text-2xl">User Personas</h3>
-            <div>
+            <h3 class="font-semibold text-2xl">Metáfora</h3>
+            <p class="font-light text-xl">
+              Los maestres en Game of Thrones, con sus cadenas forjadas por
+              eslabones de diferentes disciplinas, representan el saber
+              acumulado y la guía constante que ofrecen a los grandes señores y
+              a los reyes. De la misma manera, los alumnos de semestres
+              superiores, como maestres en formación, han forjado su propio
+              conocimiento a través de la experiencia y el estudio. Son quienes,
+              con generosidad, ofrecen sus recursos, sabiduría y consejos a
+              aquellos que recién comienzan su travesía académica. Así como los
+              maestres transmiten su conocimiento para mantener el equilibrio en
+              los Siete Reinos, los estudiantes veteranos orientan a sus
+              compañeros más jóvenes, asegurando que no pierdan el rumbo en el
+              vasto mundo del aprendizaje.
+            </p>
+          </div>
+
+          <ul class="list-disc list-inside">
+            <h3 class="font-semibold text-2xl">Mapeo de los conceptos UI/UX</h3>
+            <li class="font-light text-xl">
+              Un usuario crea una publicación llamada Resumen, y escoge un
+              recurso para subirlo
+            </li>
+
+            <li class="font-light text-xl">
+              El usuario responde una duda sobre un tema en específico
+            </li>
+
+            <li class="font-light text-xl">
+              El usuario formula una duda sobre un tema específico dentro de la
+              plataforma, como "Métodos de estudio para álgebra", y la agrega a
+              una lista llamada "Álgebra".
+            </li>
+
+            <li class="font-light text-xl">
+              Otros usuarios o el propio usuario comparten recursos, como guías,
+              horarios de mentoría o videos, relacionados con la duda,
+              agregándolos a la misma lista para referencia futura.
+            </li>
+
+            <li class="font-light text-xl">
+              El usuario recibe una respuesta detallada a su duda que está
+              etiquetada como "orientativa" o "académica", y la vincula a un
+              conjunto de dudas similares.
+            </li>
+
+            <li class="font-light text-xl">
+              A medida que las dudas se resuelven, las respuestas más útiles y
+              los recursos relacionados se organizan en la lista de forma que
+              otros usuarios puedan consultar la información de manera
+              eficiente.
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="font-semibold text-2xl">Crazy Eight</h3>
+          <div>
+            <div class="flex gap-1 flex-col my-2">
               <img
                 class="w-full rounded h-auto object-cover"
-                src="img/definir/user-persona.png"
+                src="img/disenhar/crazy-8.png"
               />
-              <p class="font-light text-xl">
-                Para la creación de los user personas, se utilizó la información
-                recopilada en la fase de empatizar. Esta investigación permitió
-                identificar los principales desafíos que enfrentan los
-                estudiantes en su experiencia académica, pudiendo desarrollar
-                perfiles detallados de los usuarios, que incluyen sus
-                necesidades, frustraciones y objetivos, con el fin de comprender
-                mejor su contexto y cómo se relacionan con los recursos
-                educativos disponibles.
+              <p class="font-light text-slate-400">
+                Crazy Eight bajo la premisa de pantalla de lista de posts
               </p>
             </div>
+
+            <p class="font-light text-xl">
+              La técnica de Crazy Eights fue crucial para fomentar la
+              creatividad y explorar soluciones diversas en un tiempo limitado.
+              Ayudó a revelar patrones y prioridades comunes en las propuestas
+              de los participantes, lo que permitió identificar áreas
+              específicas de enfoque que podían tener mayor impacto
+            </p>
           </div>
+        </div>
+
+        <p class="font-light text-xl">
+          Toda la documentación de este proceso puede encontrarse en el
+          siguiente enlace:
+          <a
+            title="Idear"
+            target="_blank"
+            class="underline text-blue-500 font-semibold"
+            href="https://docs.google.com/document/d/1Fg76k6WJ_-t9KxsYtA0LwMWIglO9Pb3Sqetd11CxhJ4/edit?usp=sharing"
+            >Idear</a
+          >.
+        </p>
+      </section>
+
+      <!-- FASE PROTOTIPAR -->
+      <section class="flex w-full flex-col gap-4 text-indigo-100">
+        <h2
+          id="title-prototipar"
+          class="font-bold text-4xl pb-4 tracking-widest border-b border-indigo-100"
+        >
+          Prototipar
+        </h2>
+
+        <div>
+          <h3 class="font-semibold text-2xl">Prototipo en Papel</h3>
+          <div class="flex gap-1 flex-col my-2">
+            <img
+              class="w-full rounded h-auto object-cover"
+              src="img/prototipar/prototipo-papel.png"
+            />
+            <p class="font-light text-slate-400">
+              Prototipos hechos en papel y utilizados para llevar a cabo pruebas
+            </p>
+          </div>
+          <p class="font-light text-xl">
+            Se realizaron prototipos en papel para ser utilizados en pruebas con
+            usuarios expertos, es decir, usuarios con conocimientos sobre
+            aplicaciones móviles y software que puedan poner a prueba aspectos
+            de usabilidad desde una perspectiva técnica. Las pruebas realizadas
+            fueron: Recorrido cognitivo y evaluaxión heurística.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="font-semibold text-2xl">Resultados de Evaluaciones</h3>
+          <p class="font-light text-xl">
+            El recorrido cognitivo y la evaluación heurística arrojaron
+            resultados clave para identificar problemas de usabilidad en la
+            interfaz evaluada. En el recorrido cognitivo, se observaron
+            dificultades en la comprensión de los resultados al completar
+            tareas, especialmente en la tareas relacionadas con la creacion de
+            registros (publicar y reseñar). Por su parte, la evaluación
+            heurística destacó violaciones de principios como la consistencia,
+            visibilidad del estado del sistema y prevención de errores, lo que
+            impacta negativamente en la experiencia del usuario. Estos hallazgos
+            subrayan la necesidad de rediseñar ciertos elementos para optimizar
+            la eficiencia y la satisfacción del usuario. Para saber más sobre
+            los resultados consulte el siguiente documento:
+            <a
+              title="Resultados"
+              class="underline text-blue-500 font-semibold"
+              target="_blank"
+              href="https://docs.google.com/spreadsheets/d/1b7gYJ5nBLOiyUqseih_y6xxVlmkGIKY31DHJPaDqok0/edit?usp=sharing"
+              >resultados</a
+            >.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="font-semibold text-2xl">
+            Prototipos de mediana fidelidad
+          </h3>
+          <div class="flex gap-1 flex-col my-2">
+            <img
+              class="w-full rounded h-auto object-cover"
+              src="img/prototipar/prototipo-mediana-fid.png"
+            />
+            <p class="font-light text-slate-400">
+              Prototipos hechos en figma y utilizados para llevar a cabo pruebas
+            </p>
+          </div>
+          <p class="font-light text-xl">
+            Se realizaron
+            <a
+              title="Planificacion de Testeo de usabilidad"
+              class="underline text-blue-500 font-semibold"
+              target="_blank"
+              href="https://www.figma.com/design/ru3YuKcazWuJM3eouwGkTZ/HCI?node-id=51-102&t=kAukZq4CEeWQWTDP-1"
+              >Prototipos de mediana fidelidad</a
+            >. con la herramienta Figma, ofreciendo mayor inmersion y
+            características al modelado de los prototipos, atendiendo a los
+            resultados de las pruebas realizadas con el prototipo de papel. Con
+            estos nuevos prototipos llevamos a cabo nuevas pruebas que siguiendo
+            una
+            <a
+              title="Planificacion de Testeo de usabilidad"
+              class="underline text-blue-500 font-semibold"
+              target="_blank"
+              href="https://docs.google.com/document/d/1FRWr92xex0aRcUegaeaQdQu3ogWVTScNhUiETvqysMY/edit?tab=t.0"
+              >Planificacion de Testeo de usabilidad</a
+            >
+            lanzaron resultados. Para conocer en profundidad sobre los
+            resultados consulte al siguiente documento:
+            <a
+              title="Resultados"
+              class="underline text-blue-500 font-semibold"
+              target="_blank"
+              href="https://docs.google.com/presentation/d/1T8t5P6JMV2f4eqjlqc1jWtM_9C55Il9P/edit?usp=sharing&ouid=106020213564598078348&rtpof=true&sd=true"
+              >resultados</a
+            >.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="font-semibold text-2xl">Prototipo de Alta fidelidad</h3>
+
+          <div class="flex gap-1 flex-col my-2">
+            <img
+              class="w-full rounded h-auto object-cover"
+              src="img/prototipar/prototipo-alta-fid.png"
+            />
+          </div>
+          <p class="font-light text-xl">
+            A partir de los resultados del recorrido cognitivo, la evaluación
+            heurística y las pruebas de usabilidad, desarrollamos un prototipo
+            de alta fidelidad que aborda las principales problemáticas
+            detectadas y desarollando en conjunto el Design System del proyecto.
+            El diseño se centró en mejorar la navegación, haciendo más
+            intuitivos los flujos de usuario y asegurando la consistencia visual
+            y funcional en toda la interfaz. Para ver en mas detalle el
+            resultado final consulte al siguiente enlace de Figma:
+            <a
+              title="Prototipo de Alta Fidelidad"
+              class="underline text-blue-500 font-semibold"
+              target="_blank"
+              href="https://www.figma.com/design/ru3YuKcazWuJM3eouwGkTZ/HCI?node-id=125-135&t=kAukZq4CEeWQWTDP-1"
+              >Prototipo de Alta Fidelidad</a
+            >.
+          </p>
         </div>
       </section>
     </main>
