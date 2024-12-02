@@ -7,14 +7,20 @@
   <link rel="stylesheet" href="style.css" />
   <link rel="shortcut icon" href="img/ico.png" type="image/png" />
   <title>FacuApp - Recursos Académicos Colaborativos</title>
-  <script src="https://cdn.tailwindcss.com" data-tailwind-ignore="true"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
       theme: {
         extend: {
           colors: {
-            primary: "#4F46E5",
-            secondary: "#818CF8",
+            primary: {
+              DEFAULT: '#4F46E5',
+              foreground: '#ffffff',
+            },
+            secondary: {
+              DEFAULT: '#818CF8',
+              foreground: '#ffffff',
+            },
           }
         }
       }
@@ -24,7 +30,7 @@
 
 <body class="min-h-screen bg-gradient-to-b from-indigo-950 to-indigo-900 text-indigo-100">
   <button id="top-button" aria-label="Volver arriba"
-    class="fixed bottom-4 right-4 bg-primary hover:bg-secondary text-white rounded-full w-12 h-12 flex items-center justify-center z-50 transition-all duration-300 opacity-0">
+    class="fixed bottom-4 right-4 bg-primary hover:bg-secondary text-white rounded-full w-12 h-12 flex items-center justify-center z-50 transition-all duration-300 opacity-0 shadow-lg">
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-up">
       <path d="m5 12 7-7 7 7" />
@@ -32,8 +38,8 @@
     </svg>
   </button>
 
-  <header class="bg-primary text-white shadow-lg">
-    <nav class="container mx-auto px-4 py-6">
+  <header class="bg-primary text-primary-foreground shadow-lg sticky top-0 z-40">
+    <nav class="container mx-auto px-4 py-4">
       <ul class="flex flex-wrap justify-center items-center gap-6 sm:gap-8 font-semibold">
         <li><a href="#empatizar" class="hover:text-secondary transition-colors">Empatizar</a></li>
         <li><a href="#definir" class="hover:text-secondary transition-colors">Definir</a></li>
@@ -43,11 +49,12 @@
     </nav>
   </header>
 
-  <main class="container mx-auto max-w-4xl px-4 py-16 space-y-24">
-    <section class="flex flex-col sm:flex-row items-center gap-8 text-center sm:text-left">
+  <main class="container mx-auto max-w-5xl px-4 py-16 space-y-32">
+    <section
+      class="flex flex-col sm:flex-row items-center gap-8 text-center sm:text-left bg-indigo-900/50 rounded-lg shadow-xl p-8">
       <img class="w-64 sm:w-80 rounded-lg shadow-xl" src="img/banner.png" alt="FacuApp logo" />
       <div>
-        <h1 class="font-bold text-4xl sm:text-6xl mb-4 tracking-wider">FacuApp</h1>
+        <h1 class="font-bold text-4xl sm:text-6xl mb-4 tracking-wider text-secondary">FacuApp</h1>
         <p class="text-lg sm:text-xl font-light leading-relaxed">
           FacuApp es una aplicación que permite a los estudiantes de las diferentes facultades de la Universidad de
           Itapúa obtener y compartir recursos académicos dentro de un entorno que promueve la colaboración entre los
@@ -56,11 +63,11 @@
       </div>
     </section>
 
-    <section id="empatizar" class="scroll-mt-24">
+    <section id="empatizar" class="scroll-mt-24 bg-indigo-900/30 rounded-lg shadow-xl p-8">
       <h2 class="font-bold text-3xl sm:text-4xl mb-6 pb-2 tracking-wider border-b-2 border-secondary">Empatizar</h2>
-      <div class="space-y-6">
-        <div>
-          <h3 class="font-semibold text-2xl mb-2">Problemática</h3>
+      <div class="space-y-8">
+        <div class="bg-indigo-950/50 rounded-lg p-6">
+          <h3 class="font-semibold text-2xl mb-4 text-secondary">Problemática</h3>
           <p class="text-lg font-light">
             La problemática de la descentralización de la información en la FIUNI surgió tras una discusión grupal
             dentro del desarrollo de una lluvia de ideas, donde llegamos a una conclusión compartida: la información
@@ -70,23 +77,24 @@
           </p>
         </div>
 
-        <div>
-          <h3 class="font-semibold text-2xl mb-2">Metodología</h3>
+        <div class="bg-indigo-950/50 rounded-lg p-6">
+          <h3 class="font-semibold text-2xl mb-4 text-secondary">Metodología</h3>
           <p class="text-lg font-light">
             La investigación tiene como objetivo identificar las dificultades que enfrentan los estudiantes de la
             Facultad de Ingeniería de la UNI para acceder a materiales educativos e información relevante, y cómo estas
             barreras impactan su rendimiento académico. Para abordar este problema, se realizaron
             <a href="https://forms.gle/htsuYTzhqTD9sVoT9" target="_blank" rel="noopener noreferrer"
-              class="text-secondary hover:underline">encuestas</a> y
+              class="text-primary hover:text-secondary transition-colors">encuestas</a> y
             <a href="https://docs.google.com/document/d/1xQX1dTEMaxl5xpSzHxSHWfC9IYCu4pT11AuwnPPLqRs/edit"
-              target="_blank" rel="noopener noreferrer" class="text-secondary hover:underline">entrevistas</a> a
-            estudiantes de distintos semestres, egresados y recién ingresados.
+              target="_blank" rel="noopener noreferrer"
+              class="text-primary hover:text-secondary transition-colors">entrevistas</a> a estudiantes de distintos
+            semestres, egresados y recién ingresados.
           </p>
         </div>
 
-        <div>
-          <h3 class="font-semibold text-2xl mb-2">Resultados</h3>
-          <figure class="mb-4">
+        <div class="bg-indigo-950/50 rounded-lg p-6">
+          <h3 class="font-semibold text-2xl mb-4 text-secondary">Resultados</h3>
+          <figure class="mb-6">
             <img class="w-full rounded-lg shadow-lg" src="img/empatizar/resultados.png"
               alt="Gráfico de resultados de la encuesta" />
             <figcaption class="mt-2 text-sm text-center text-indigo-300">
@@ -98,24 +106,25 @@
             Se llevó a cabo una encuesta a 61 estudiantes de la facultad para explorar las dinámicas y desafíos en su
             desarrollo académico. Mediante los
             <a href="https://docs.google.com/spreadsheets/d/1SP8eCswPOU8cp2Mn0pShArGM_duQXnk-mUjNEORGX-o/edit?usp=sharing"
-              target="_blank" rel="noopener noreferrer" class="text-secondary hover:underline">resultados</a> se
-            encontró que la información relevante, como horarios y correlatividades de las materias, es crucial para los
-            estudiantes a la hora de inscribirse. Sin embargo, la falta de recursos para resolver dudas académicas y la
-            limitada disponibilidad de materiales adecuados para estudiar son áreas que requieren atención. La
-            colaboración entre compañeros juega un papel central, tanto en la resolución de dudas como en el intercambio
-            de recursos de estudio, destacándose la importancia de mejorar el acceso a guías de estudio y ejemplos de
-            exámenes para una preparación más eficaz.
+              target="_blank" rel="noopener noreferrer"
+              class="text-primary hover:text-secondary transition-colors">resultados</a> se encontró que la información
+            relevante, como horarios y correlatividades de las materias, es crucial para los estudiantes a la hora de
+            inscribirse. Sin embargo, la falta de recursos para resolver dudas académicas y la limitada disponibilidad
+            de materiales adecuados para estudiar son áreas que requieren atención. La colaboración entre compañeros
+            juega un papel central, tanto en la resolución de dudas como en el intercambio de recursos de estudio,
+            destacándose la importancia de mejorar el acceso a guías de estudio y ejemplos de exámenes para una
+            preparación más eficaz.
           </p>
         </div>
       </div>
     </section>
 
-    <section id="definir" class="scroll-mt-24">
+    <section id="definir" class="scroll-mt-24 bg-indigo-900/30 rounded-lg shadow-xl p-8">
       <h2 class="font-bold text-3xl sm:text-4xl mb-6 pb-2 tracking-wider border-b-2 border-secondary">Definir</h2>
-      <div class="space-y-6">
-        <div>
-          <h3 class="font-semibold text-2xl mb-2">User Personas</h3>
-          <figure class="mb-4">
+      <div class="space-y-8">
+        <div class="bg-indigo-950/50 rounded-lg p-6">
+          <h3 class="font-semibold text-2xl mb-4 text-secondary">User Personas</h3>
+          <figure class="mb-6">
             <img class="w-full rounded-lg shadow-lg" src="img/definir/user-persona.png" alt="User Persona" />
             <figcaption class="mt-2 text-sm text-center text-indigo-300">
               User persona realizado durante esta fase.
@@ -130,9 +139,9 @@
           </p>
         </div>
 
-        <div>
-          <h3 class="font-semibold text-2xl mb-2">POVs (Points of View)</h3>
-          <figure class="mb-4">
+        <div class="bg-indigo-950/50 rounded-lg p-6">
+          <h3 class="font-semibold text-2xl mb-4 text-secondary">POVs (Points of View)</h3>
+          <figure class="mb-6">
             <img class="w-full rounded-lg shadow-lg" src="img/definir/povs.png"
               alt="POV realizados durante esta fase." />
             <figcaption class="mt-2 text-sm text-center text-indigo-300">
@@ -146,8 +155,8 @@
           </p>
         </div>
 
-        <div>
-          <h3 class="font-semibold text-2xl mb-2">HMW (How Might We)</h3>
+        <div class="bg-indigo-950/50 rounded-lg p-6">
+          <h3 class="font-semibold text-2xl mb-4 text-secondary">HMW (How Might We)</h3>
           <p class="text-lg font-light">
             Una vez que los POVs aclararon las necesidades y los insights, las preguntas HMW facilitaron la transición
             hacia la búsqueda de soluciones.
@@ -157,16 +166,17 @@
         <p class="text-lg font-light">
           Toda la documentación de este proceso puede encontrarse en el siguiente enlace:
           <a href="https://docs.google.com/document/d/1uGdcUVVDZjZJBmYpvgfm-viikBXzQXHMAfjz8r_8u-E/edit?usp=sharing"
-            target="_blank" rel="noopener noreferrer" class="text-secondary hover:underline">Definición</a>.
+            target="_blank" rel="noopener noreferrer"
+            class="text-primary hover:text-secondary transition-colors">Definición</a>.
         </p>
       </div>
     </section>
 
-    <section id="idear" class="scroll-mt-24">
+    <section id="idear" class="scroll-mt-24 bg-indigo-900/30 rounded-lg shadow-xl p-8">
       <h2 class="font-bold text-3xl sm:text-4xl mb-6 pb-2 tracking-wider border-b-2 border-secondary">Idear</h2>
-      <div class="space-y-6">
-        <div>
-          <h3 class="font-semibold text-2xl mb-2">Metáfora</h3>
+      <div class="space-y-8">
+        <div class="bg-indigo-950/50 rounded-lg p-6">
+          <h3 class="font-semibold text-2xl mb-4 text-secondary">Metáfora</h3>
           <p class="text-lg font-light">
             Los maestres en Game of Thrones, con sus cadenas forjadas por eslabones de diferentes disciplinas,
             representan el saber acumulado y la guía constante que ofrecen a los grandes señores y a los reyes. De la
@@ -184,8 +194,8 @@
           </figure>
         </div>
 
-        <div>
-          <h3 class="font-semibold text-2xl mb-2">Mapeo de los conceptos UI/UX</h3>
+        <div class="bg-indigo-950/50 rounded-lg p-6">
+          <h3 class="font-semibold text-2xl mb-4 text-secondary">Mapeo de los conceptos UI/UX</h3>
           <ul class="list-disc list-inside space-y-2 text-lg font-light">
             <li>Un usuario crea una publicación llamada Resumen, y escoge un recurso para subirlo</li>
             <li>El usuario responde una duda sobre un tema en específico</li>
@@ -200,10 +210,10 @@
           </ul>
         </div>
 
-        <div>
-          <h3 class="font-semibold text-2xl mb-2">Crazy Eight</h3>
-          <figure class="mb-4">
-            <img class="w-full rounded-lg shadow-lg" src="img/disenhar/crazy-8.png" alt="Crazy Eight" />
+        <div class="bg-indigo-950/50 rounded-lg p-6">
+          <h3 class="font-semibold text-2xl mb-4 text-secondary">Crazy Eight</h3>
+          <figure class="mb-6">
+            <img class="w-full rounded-lg shadow-lg" src="img/disenhar/crazy-8.png" alt="Ejemplo de Crazy Eight" />
             <figcaption class="mt-2 text-sm text-center text-indigo-300">
               Crazy Eight bajo la premisa de pantalla de lista de posts
             </figcaption>
@@ -218,19 +228,20 @@
         <p class="text-lg font-light">
           Toda la documentación de este proceso puede encontrarse en el siguiente enlace:
           <a href="https://docs.google.com/document/d/1Fg76k6WJ_-t9KxsYtA0LwMWIglO9Pb3Sqetd11CxhJ4/edit?usp=sharing"
-            target="_blank" rel="noopener noreferrer" class="text-secondary hover:underline">Idear</a>.
+            target="_blank" rel="noopener noreferrer"
+            class="text-primary hover:text-secondary transition-colors">Idear</a>.
         </p>
       </div>
     </section>
 
-    <section id="prototipar" class="scroll-mt-24">
+    <section id="prototipar" class="scroll-mt-24 bg-indigo-900/30 rounded-lg shadow-xl p-8">
       <h2 class="font-bold text-3xl sm:text-4xl mb-6 pb-2 tracking-wider border-b-2 border-secondary">
         Prototipar
       </h2>
-      <div class="space-y-6">
-        <div>
-          <h3 class="font-semibold text-2xl mb-2">Prototipo en Papel</h3>
-          <figure class="mb-4">
+      <div class="space-y-8">
+        <div class="bg-indigo-950/50 rounded-lg p-6">
+          <h3 class="font-semibold text-2xl mb-4 text-secondary">Prototipo en Papel</h3>
+          <figure class="mb-6">
             <img class="w-full rounded-lg shadow-lg" src="img/prototipar/prototipo-papel.png"
               alt="Prototipos en papel" />
             <figcaption class="mt-2 text-sm text-center text-indigo-300">
@@ -244,8 +255,8 @@
           </p>
         </div>
 
-        <div>
-          <h3 class="font-semibold text-2xl mb-2">Resultados de Evaluaciones</h3>
+        <div class="bg-indigo-950/50 rounded-lg p-6">
+          <h3 class="font-semibold text-2xl mb-4 text-secondary">Resultados de Evaluaciones</h3>
           <p class="text-lg font-light">
             El recorrido cognitivo y la evaluación heurística arrojaron resultados clave para identificar problemas de
             usabilidad en la interfaz evaluada. En el recorrido cognitivo, se observaron dificultades en la comprensión
@@ -256,13 +267,14 @@
             la eficiencia y la satisfacción del usuario. Para saber más sobre los resultados consulte el siguiente
             documento:
             <a href="https://docs.google.com/spreadsheets/d/1b7gYJ5nBLOiyUqseih_y6xxVlmkGIKY31DHJPaDqok0/edit?usp=sharing"
-              target="_blank" rel="noopener noreferrer" class="text-secondary hover:underline">resultados</a>.
+              target="_blank" rel="noopener noreferrer"
+              class="text-primary hover:text-secondary transition-colors">resultados</a>.
           </p>
         </div>
 
-        <div>
-          <h3 class="font-semibold text-2xl mb-2">Prototipos de mediana fidelidad</h3>
-          <figure class="mb-4">
+        <div class="bg-indigo-950/50 rounded-lg p-6">
+          <h3 class="font-semibold text-2xl mb-4 text-secondary">Prototipos de mediana fidelidad</h3>
+          <figure class="mb-6">
             <img class="w-full rounded-lg shadow-lg" src="img/prototipar/prototipo-mediana-fid.png"
               alt="Prototipos de mediana fidelidad" />
             <figcaption class="mt-2 text-sm text-center text-indigo-300">
@@ -272,22 +284,24 @@
           <p class="text-lg font-light">
             Se realizaron
             <a href="https://www.figma.com/design/ru3YuKcazWuJM3eouwGkTZ/HCI?node-id=51-102&t=kAukZq4CEeWQWTDP-1"
-              target="_blank" rel="noopener noreferrer" class="text-secondary hover:underline">Prototipos de mediana
-              fidelidad</a> con la herramienta Figma, ofreciendo mayor inmersión y características al modelado de los
-            prototipos, atendiendo a los resultados de las pruebas realizadas con el prototipo de papel. Con estos
-            nuevos prototipos llevamos a cabo nuevas pruebas que siguiendo una
+              target="_blank" rel="noopener noreferrer"
+              class="text-primary hover:text-secondary transition-colors">Prototipos de mediana fidelidad</a> con la
+            herramienta Figma, ofreciendo mayor inmersión y características al modelado de los prototipos, atendiendo a
+            los resultados de las pruebas realizadas con el prototipo de papel. Con estos nuevos prototipos llevamos a
+            cabo nuevas pruebas que siguiendo una
             <a href="https://docs.google.com/document/d/1FRWr92xex0aRcUegaeaQdQu3ogWVTScNhUiETvqysMY/edit?tab=t.0"
-              target="_blank" rel="noopener noreferrer" class="text-secondary hover:underline">Planificación de Testeo
-              de usabilidad</a>
+              target="_blank" rel="noopener noreferrer"
+              class="text-primary hover:text-secondary transition-colors">Planificación de Testeo de usabilidad</a>
             lanzaron resultados. Para conocer en profundidad sobre los resultados consulte al siguiente documento:
             <a href="https://docs.google.com/presentation/d/1T8t5P6JMV2f4eqjlqc1jWtM_9C55Il9P/edit?usp=sharing&ouid=106020213564598078348&rtpof=true&sd=true"
-              target="_blank" rel="noopener noreferrer" class="text-secondary hover:underline">resultados</a>.
+              target="_blank" rel="noopener noreferrer"
+              class="text-primary hover:text-secondary transition-colors">resultados</a>.
           </p>
         </div>
 
-        <div>
-          <h3 class="font-semibold text-2xl mb-2">Prototipo de Alta fidelidad</h3>
-          <figure class="mb-4">
+        <div class="bg-indigo-950/50 rounded-lg p-6">
+          <h3 class="font-semibold text-2xl mb-4 text-secondary">Prototipo de Alta fidelidad</h3>
+          <figure class="mb-6">
             <img class="w-full rounded-lg shadow-lg" src="img/prototipar/prototipo-alta-fid.png"
               alt="Prototipo de alta fidelidad" />
           </figure>
@@ -298,8 +312,8 @@
             haciendo más intuitivos los flujos de usuario y asegurando la consistencia visual y funcional en toda la
             interfaz. Para ver en más detalle el resultado final consulte al siguiente enlace de Figma:
             <a href="https://www.figma.com/proto/ru3YuKcazWuJM3eouwGkTZ/HCI?node-id=125-135&t=BAMJ7A3J7FKd4gTa-1"
-              target="_blank" rel="noopener noreferrer" class="text-secondary hover:underline">Prototipo de Alta
-              Fidelidad</a>.
+              target="_blank" rel="noopener noreferrer"
+              class="text-primary hover:text-secondary transition-colors">Prototipo de Alta Fidelidad</a>.
           </p>
         </div>
       </div>
